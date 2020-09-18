@@ -9,7 +9,7 @@ import { useDispatch } from 'react-redux'
 const RootScreen = () => {
   // Deep linking prefix
   const prefix = 'boilerplate://';
-  
+
   const dispatch = useDispatch()
 
   useEffect(() => {

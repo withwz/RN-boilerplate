@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { Config } from 'App/Config'
+import { Config } from '../../App/Config/index.dev'
 import { is, curryN, gte } from 'ramda'
 
 const isWithin = curryN(3, (min, max, value) => {
@@ -17,6 +17,7 @@ const userApiClient = axios.create({
   /**
    * Import the config from the App/Config/index.js file
    */
+  // baseURL: "https://jsonplaceholder.typicode.com/users/",
   baseURL: Config.API_URL,
   headers: {
     Accept: 'application/json',
@@ -37,6 +38,7 @@ function fetchUser() {
 
   return userApiClient.get(number.toString()).then((response) => {
     if (in200s(response.status)) {
+      console.log(response, "!!!")
       return response.data
     }
 

@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { Platform, Text, View, Button, ActivityIndicator, Image } from 'react-native'
 import { useDispatch, useSelector } from 'react-redux'
 import ExampleActions from 'App/Stores/Example/Actions'
+import NavigationService from 'App/Services/NavigationService'
 import { liveInEurope } from 'App/Stores/Example/Selectors'
 import Style from './ExampleScreenStyle'
 import { ApplicationStyles, Helpers, Images, Metrics } from 'App/Theme'
@@ -23,7 +24,6 @@ const ExampleScreen = () => {
   const user = useSelector((state) => state.example.user)
   const userIsLoading = useSelector((state) => state.example.userIsLoading)
   const userErrorMessage = useSelector((state) => state.example.userErrorMessage)
-
   useEffect(() => {
     dispatch(ExampleActions.fetchUser())
   }, [])
@@ -40,32 +40,36 @@ const ExampleScreen = () => {
       {userIsLoading ? (
         <ActivityIndicator size="large" color="#0000ff" />
       ) : (
-        <View>
-          <View style={Style.logoContainer}>
-            <Image style={Helpers.fullSize} source={Images.logo} resizeMode={'contain'} />
-          </View>
-          <Text style={Style.text}>To get started, edit App.js</Text>
-          <Text style={Style.instructions}>{instructions}</Text>
-          {userErrorMessage ? (
-            <Text style={Style.error}>{userErrorMessage}</Text>
-          ) : (
-            <View>
-              <Text style={Style.result}>
-                {"I'm a fake user, my name is "}
-                {user.name}
-              </Text>
-              <Text style={Style.result}>
-                {liveInEurope ? 'I live in Europe !' : "I don't live in Europe."}
-              </Text>
+          <View>
+            <View style={Style.logoContainer}>
+              <Image style={Helpers.fullSize} source={Images.logo} resizeMode={'contain'} />
             </View>
-          )}
-          <Button
-            style={ApplicationStyles.button}
-            onPress={() => dispatch(ExampleActions.fetchUser())}
-            title="Refresh"
-          />
-        </View>
-      )}
+            <Text style={Style.text}>To get started, edit App.js</Text>
+            <Text style={Style.instructions}>{instructions}</Text>
+            {userErrorMessage ? (
+              <Text style={Style.error}>{userErrorMessage}</Text>
+            ) : (
+                <View>
+                  <Text style={Style.result}>
+                    {"I'm a fake user, my name is "}
+                    {user.name}
+                  </Text>
+                  <Text style={Style.result}>
+                    {liveInEurope ? 'I live in Europe !' : "I don't live in Europe."}
+                  </Text>
+                </View>
+              )}
+            <Button
+              style={ApplicationStyles.button}
+              // onPress={() => dispatch(ExampleActions.fetchUser())}
+              onPress={() => {
+                console.log("~~~111")
+                NavigationService.navigate('deeplink')
+              }}
+              title="Refresh"
+            />
+          </View>
+        )}
     </View>
   )
 }
