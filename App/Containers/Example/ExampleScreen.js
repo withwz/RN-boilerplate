@@ -63,10 +63,9 @@ const ExampleScreen = () => {
               style={ApplicationStyles.button}
               // onPress={() => dispatch(ExampleActions.fetchUser())}
               onPress={() => {
-                console.log("~~~111")
-                NavigationService.navigate('deeplink')
+                NavigationService.navigate('ListViewTasteScreen')
               }}
-              title="Refresh"
+              title="进入App"
             />
           </View>
         )}

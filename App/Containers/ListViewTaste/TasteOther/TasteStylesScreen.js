@@ -6,7 +6,7 @@ import { Helpers, Metrics } from 'App/Theme'
 /**
  * This is an example of a container component with a deep link.
  */
-const DeepLinkingScreen = () => (
+const TasteStylesScreen = () => (
   <View style={[Helpers.fillCenter, Helpers.rowMain, Metrics.mediumHorizontalMargin]}>
     <Button
       onPress={() => {
@@ -21,9 +21,9 @@ const DeepLinkingScreen = () => (
     />
 
     <Text>
-      This is deep linking example screen which can be accessed using boilerplate://deeplink scheme!
+      测试样式
     </Text>
   </View>
 )
 
-export default DeepLinkingScreen
+export default TasteStylesScreen

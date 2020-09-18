@@ -2,7 +2,12 @@ import { createAppContainer, createStackNavigator } from 'react-navigation'
 
 import ExampleScreen from 'App/Containers/Example/ExampleScreen'
 import DeepLinkingScreen from 'App/Containers/DeepLinking/DeepLinkingScreen'
+import ListViewTasteScreen from 'App/Containers/ListViewTaste/ListViewTasteScreen'
+import TasteNavigationActionsScreen from 'App/Containers/ListViewTaste/TasteOther/TasteNavigationActionsScreen'
+import TasteStylesScreen from 'App/Containers/ListViewTaste/TasteOther/TasteStylesScreen'
+
 import SplashScreen from 'App/Containers/SplashScreen/SplashScreen'
+
 
 /**
  * The root screen contains the application's navigation.
@@ -22,6 +27,18 @@ const StackNavigator = createStackNavigator(
     DeepLinkingScreen: {
       screen: DeepLinkingScreen,
       path: 'deeplink',
+    },
+    ListViewTasteScreen: {
+      screen: ListViewTasteScreen,
+      path: 'listview',
+    },
+    TasteNavigationActionsScreen: {
+      screen: TasteNavigationActionsScreen,
+      path: 'teastnav',
+    },
+    TasteStylesScreen: {
+      screen: TasteStylesScreen,
+      path: 'teaststyles',
     },
   },
   {
