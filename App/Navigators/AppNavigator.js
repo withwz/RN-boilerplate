@@ -5,6 +5,7 @@ import DeepLinkingScreen from 'App/Containers/DeepLinking/DeepLinkingScreen'
 import ListViewTasteScreen from 'App/Containers/ListViewTaste/ListViewTasteScreen'
 import TasteNavigationActionsScreen from 'App/Containers/ListViewTaste/TasteOther/TasteNavigationActionsScreen'
 import TasteStylesScreen from 'App/Containers/ListViewTaste/TasteOther/TasteStylesScreen'
+import TasteFooterNav from 'App/Containers/ListViewTaste/FooterNav'
 
 import SplashScreen from 'App/Containers/SplashScreen/SplashScreen'
 
@@ -35,6 +36,10 @@ const StackNavigator = createStackNavigator(
     TasteNavigationActionsScreen: {
       screen: TasteNavigationActionsScreen,
       path: 'teastnav',
+    },
+    TasteFooterNav: {
+      screen: TasteFooterNav,
+      path: 'footernav'
     },
     TasteStylesScreen: {
       screen: TasteStylesScreen,

@@ -15,8 +15,11 @@ const ListViewTasteScreen = () => (
           key: '尝试样式',
           route: 'TasteStylesScreen',
         },
-        { key: 'Dominic' },
-        { key: 'Jackson' },
+        {
+          key: '尝试底部导航',
+          route: 'TasteFooterNav',
+        },
+        { key: 'Jackso11n' },
         { key: 'James' },
         { key: 'Joel' },
         { key: 'John' },
@@ -36,6 +39,7 @@ const ListViewTasteScreen = () => (
       ]}
       renderItem={({ item }) => <Text
         onPress={() => {
+          console.log(item)
           NavigationService.navigate(item.route)
         }}
         style={styles.item}>{item.key}</Text>}

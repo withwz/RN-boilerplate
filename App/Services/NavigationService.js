@@ -22,7 +22,7 @@ function setTopLevelNavigator(navigatorRef) {
  * @param params Route parameters.
  */
 function navigate(routeName, params) {
-  console.log(routeName, "@@@")
+  console.log(routeName, "@@1@")
   navigator.dispatch(
     NavigationActions.navigate({
       routeName,
@@ -33,7 +33,7 @@ function navigate(routeName, params) {
 
 /**
  * Call this function when you want to navigate to a specific route AND reset the navigation history.
- * 
+ *
  * That means the user cannot go back. This is useful for example to redirect from a splashscreen to
  * the main screen: the user should not be able to go back to the splashscreen.
  *
